@@ -31,8 +31,8 @@ public class CubeSide {
         schema[row] = schemaRow;
     }
 
-    public void setSchemaColum(int column) {
-
+    public void setSchemaElement(int row, int column, Enum element) {
+        schema[row][column] = element;
     }
 
     public void rotateSchemaClockwise() {

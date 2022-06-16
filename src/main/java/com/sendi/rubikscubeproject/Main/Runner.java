@@ -49,19 +49,19 @@ public class Runner {
         cube.put(Sides.BOTTOM, cubeSideBottomGreen);
 
         Move move = new Move(cube);
-        System.out.println("##############");
-        move.middleToRight(Sides.FRONT);
-
+        move.leftToUp(Sides.FRONT);
+//
         System.out.println(Arrays.deepToString(cube.get(Sides.FRONT).getSchema()));
         System.out.println(Arrays.deepToString(cube.get(Sides.BACK).getSchema()));
-
-        move.topToRight(Sides.FRONT);
+//        move.leftToUp(Sides.FRONT);
+//
+//        System.out.println(Arrays.deepToString(cube.get(Sides.BACK).getSchema()));
+        System.out.println("###########");
+        move.middleToLeft(Sides.FRONT);
         System.out.println(Arrays.deepToString(cube.get(Sides.FRONT).getSchema()));
         System.out.println(Arrays.deepToString(cube.get(Sides.BACK).getSchema()));
+        System.out.println(Arrays.deepToString(cube.get(Sides.RIGHT).getSchema()));
 
-        move.bottomToRight(Sides.FRONT);
-        System.out.println(Arrays.deepToString(cube.get(Sides.FRONT).getSchema()));
-        System.out.println(Arrays.deepToString(cube.get(Sides.BACK).getSchema()));
 
         Scanner scanner = new Scanner(System.in);
         String inGame = scanner.nextLine();
