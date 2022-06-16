@@ -141,34 +141,34 @@ public class Move {
     public void leftToUp(Sides sides) {
         Enum bottomRowLeftElementOfCurrentSide = moveCube.get(sides).getSchema()[2][0];
         Enum bottomRowLeftElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[2][0];
-        Enum bottomRowLeftElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][2];
+        Enum topRowRightElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][2];
         Enum bottomRowLeftElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[2][0];
 
         Enum temp = bottomRowLeftElementOfCurrentSide;
         moveCube.get(sides).setSchemaElement(2, 0, bottomRowLeftElementOfBottomSide);
-        moveCube.get(Sides.BOTTOM).setSchemaElement(2, 0, bottomRowLeftElementOfBackSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(2, 0, topRowRightElementOfBackSide);
         moveCube.get(Sides.BACK).setSchemaElement(0, 2, bottomRowLeftElementOfTopSide);
         moveCube.get(Sides.TOP).setSchemaElement(2, 0, temp);
 
         Enum middleRowLeftElementOfCurrentSide = moveCube.get(sides).getSchema()[1][0];
         Enum middleRowLeftElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[1][0];
-        Enum middleRowLeftElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[1][2];
+        Enum middleRowRightElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[1][2];
         Enum middleRowLeftElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[1][0];
 
         temp = middleRowLeftElementOfCurrentSide;
         moveCube.get(sides).setSchemaElement(1, 0, middleRowLeftElementOfBottomSide);
-        moveCube.get(Sides.BOTTOM).setSchemaElement(1, 0, middleRowLeftElementOfBackSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(1, 0, middleRowRightElementOfBackSide);
         moveCube.get(Sides.BACK).setSchemaElement(1, 2, middleRowLeftElementOfTopSide);
         moveCube.get(Sides.TOP).setSchemaElement(1, 0, temp);
 
         Enum topRowLeftElementOfCurrentSide = moveCube.get(sides).getSchema()[0][0];
         Enum topRowLeftElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[0][0];
-        Enum topRowLeftElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][0];
+        Enum bottomRowRightElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][0];
         Enum topRowLeftElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[0][0];
 
         temp = topRowLeftElementOfCurrentSide;
         moveCube.get(sides).setSchemaElement(0, 0, topRowLeftElementOfBottomSide);
-        moveCube.get(Sides.BOTTOM).setSchemaElement(0, 0,topRowLeftElementOfBackSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(0, 0, bottomRowRightElementOfBackSide);
         moveCube.get(Sides.BACK).setSchemaElement(2, 2, topRowLeftElementOfTopSide);
         moveCube.get(Sides.TOP).setSchemaElement(0, 0, temp);
 
@@ -178,12 +178,12 @@ public class Move {
     public void middleToUp(Sides sides) {
         Enum bottomRowMiddleElementOfCurrentSide = moveCube.get(sides).getSchema()[2][1];
         Enum bottomRowMiddleElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[2][1];
-        Enum bottomRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][1];
+        Enum topRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][1];
         Enum bottomRowMiddleElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[2][1];
 
         Enum temp = bottomRowMiddleElementOfCurrentSide;
         moveCube.get(sides).setSchemaElement(2, 1, bottomRowMiddleElementOfBottomSide);
-        moveCube.get(Sides.BOTTOM).setSchemaElement(2, 1, bottomRowMiddleElementOfBackSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(2, 1, topRowMiddleElementOfBackSide);
         moveCube.get(Sides.BACK).setSchemaElement(0, 1, bottomRowMiddleElementOfTopSide);
         moveCube.get(Sides.TOP).setSchemaElement(2, 1, temp);
 
@@ -201,12 +201,12 @@ public class Move {
 
         Enum topRowMiddleElementOfCurrentSide = moveCube.get(sides).getSchema()[0][1];
         Enum topRowMiddleElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[0][1];
-        Enum topRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[2][1];
+        Enum bottomRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[2][1];
         Enum topRowMiddleElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[0][1];
 
         temp = topRowMiddleElementOfCurrentSide;
         moveCube.get(sides).setSchemaElement(0, 1, topRowMiddleElementOfBottomSide);
-        moveCube.get(Sides.BOTTOM).setSchemaElement(0, 1,topRowMiddleElementOfBackSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(0, 1, bottomRowMiddleElementOfBackSide);
         moveCube.get(Sides.BACK).setSchemaElement(2, 1, topRowMiddleElementOfTopSide);
         moveCube.get(Sides.TOP).setSchemaElement(0, 1, temp);
 
@@ -251,14 +251,111 @@ public class Move {
     }
 
     public void leftToDown(Sides sides) {
+        Enum bottomRowLeftElementOfCurrentSide = moveCube.get(sides).getSchema()[2][0];
+        Enum bottomRowLeftElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[2][0];
+        Enum topRowRightElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][2];
+        Enum bottomRowLeftElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[2][0];
 
+        Enum temp = bottomRowLeftElementOfCurrentSide;
+        moveCube.get(sides).setSchemaElement(2, 0, bottomRowLeftElementOfTopSide);
+        moveCube.get(Sides.TOP).setSchemaElement(2, 0, topRowRightElementOfBackSide);
+        moveCube.get(Sides.BACK).setSchemaElement(0, 2, bottomRowLeftElementOfBottomSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(2, 0, temp);
+
+        Enum middleRowLeftElementOfCurrentSide = moveCube.get(sides).getSchema()[1][0];
+        Enum middleRowLeftElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[1][0];
+        Enum middleRowRightElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[1][2];
+        Enum middleRowLeftElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[1][0];
+
+        temp = middleRowLeftElementOfCurrentSide;
+        moveCube.get(sides).setSchemaElement(1, 0, middleRowLeftElementOfTopSide);
+        moveCube.get(Sides.TOP).setSchemaElement(1, 0, middleRowRightElementOfBackSide);
+        moveCube.get(Sides.BACK).setSchemaElement(1, 2, middleRowLeftElementOfBottomSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(1, 0, temp);
+
+        Enum topRowLeftElementOfCurrentSide = moveCube.get(sides).getSchema()[0][0];
+        Enum topRowLeftElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[0][0];
+        Enum bottomRowRightElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][0];
+        Enum topRowLeftElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[0][0];
+
+        temp = topRowLeftElementOfCurrentSide;
+        moveCube.get(sides).setSchemaElement(0, 0, topRowLeftElementOfTopSide);
+        moveCube.get(Sides.TOP).setSchemaElement(0, 0, bottomRowRightElementOfBackSide);
+        moveCube.get(Sides.BACK).setSchemaElement(2, 2, topRowLeftElementOfBottomSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(0, 0, temp);
+
+        moveCube.get(Sides.LEFT).rotateSchemaCounterClockwise();
     }
 
     public void middleToDown(Sides sides) {
+            Enum bottomRowMiddleElementOfCurrentSide = moveCube.get(sides).getSchema()[2][1];
+            Enum bottomRowMiddleElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[2][1];
+            Enum topRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][1];
+            Enum bottomRowMiddleElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[2][1];
 
+            Enum temp = bottomRowMiddleElementOfCurrentSide;
+            moveCube.get(sides).setSchemaElement(2, 1, bottomRowMiddleElementOfTopSide);
+            moveCube.get(Sides.TOP).setSchemaElement(2, 1, topRowMiddleElementOfBackSide);
+            moveCube.get(Sides.BACK).setSchemaElement(0, 1, bottomRowMiddleElementOfBottomSide);
+            moveCube.get(Sides.BOTTOM).setSchemaElement(2, 1, temp);
+
+            Enum middleRowMiddleElementOfCurrentSide = moveCube.get(sides).getSchema()[1][1];
+            Enum middleRowMiddleElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[1][1];
+            Enum middleRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[1][1];
+            Enum middleRowMiddleElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[1][1];
+
+            temp = middleRowMiddleElementOfCurrentSide;
+            moveCube.get(sides).setSchemaElement(1, 1, middleRowMiddleElementOfTopSide);
+            moveCube.get(Sides.TOP).setSchemaElement(1, 1, middleRowMiddleElementOfBackSide);
+            moveCube.get(Sides.BACK).setSchemaElement(1, 1, middleRowMiddleElementOfBottomSide);
+            moveCube.get(Sides.BOTTOM).setSchemaElement(1, 1, temp);
+
+            Enum topRowMiddleElementOfCurrentSide = moveCube.get(sides).getSchema()[0][1];
+            Enum topRowMiddleElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[0][1];
+            Enum bottomRowMiddleElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[2][1];
+            Enum topRowMiddleElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[0][1];
+
+            temp = topRowMiddleElementOfCurrentSide;
+            moveCube.get(sides).setSchemaElement(0, 1, topRowMiddleElementOfTopSide);
+            moveCube.get(Sides.TOP).setSchemaElement(0, 1, topRowMiddleElementOfBackSide);
+            moveCube.get(Sides.BACK).setSchemaElement(2, 1, topRowMiddleElementOfBottomSide);
+            moveCube.get(Sides.BOTTOM).setSchemaElement(0, 1, temp);
     }
 
     public void rightToDown(Sides sides) {
+        Enum bottomRowRightElementOfCurrentSide = moveCube.get(sides).getSchema()[2][2];
+        Enum bottomRowRightElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[2][2];
+        Enum topRowLeftElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[0][0];
+        Enum bottomRowRightElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[2][2];
 
+        Enum temp = bottomRowRightElementOfCurrentSide;
+        moveCube.get(sides).setSchemaElement(2, 2, bottomRowRightElementOfTopSide);
+        moveCube.get(Sides.TOP).setSchemaElement(2, 2, topRowLeftElementOfBackSide);
+        moveCube.get(Sides.BACK).setSchemaElement(0, 0, bottomRowRightElementOfTopSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(2, 2, temp);
+
+        Enum middleRowRightElementOfCurrentSide = moveCube.get(sides).getSchema()[1][2];
+        Enum middleRowRightElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[1][2];
+        Enum middleRowLeftElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[1][0];
+        Enum middleRowRightElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[1][2];
+
+        temp = middleRowRightElementOfCurrentSide;
+        moveCube.get(sides).setSchemaElement(1, 2, middleRowRightElementOfTopSide);
+        moveCube.get(Sides.TOP).setSchemaElement(1, 2, middleRowLeftElementOfBackSide);
+        moveCube.get(Sides.BACK).setSchemaElement(1, 0, middleRowRightElementOfBottomSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(1, 2, temp);
+
+        Enum topRowRightElementOfCurrentSide = moveCube.get(sides).getSchema()[0][2];
+        Enum topRowRightElementOfTopSide = moveCube.get(Sides.TOP).getSchema()[0][2];
+        Enum bottomRowLeftElementOfBackSide = moveCube.get(Sides.BACK).getSchema()[2][0];
+        Enum topRowRightElementOfBottomSide = moveCube.get(Sides.BOTTOM).getSchema()[0][2];
+
+        temp = topRowRightElementOfCurrentSide;
+        moveCube.get(sides).setSchemaElement(0, 2, topRowRightElementOfTopSide);
+        moveCube.get(Sides.TOP).setSchemaElement(0, 2, bottomRowLeftElementOfBackSide);
+        moveCube.get(Sides.BACK).setSchemaElement(2, 0, topRowRightElementOfTopSide);
+        moveCube.get(Sides.BOTTOM).setSchemaElement(0, 2, temp);
+
+        moveCube.get(Sides.RIGHT).rotateSchemaClockwise();
     }
 }
